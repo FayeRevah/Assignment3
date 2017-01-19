@@ -27,7 +27,7 @@ public class Assignment3 {
 
     public static void main(String[] args)
     {
-
+        Deck testDeck = new Deck(3);
     }
 
 }
@@ -57,14 +57,30 @@ class Deck // Roderick
 
     int topCard;
     int numPacks;
-
+    
     public Deck()
     {
+        allocateMasterPack();
+        this.numPacks = 1;
+        init(this.numPacks);
+    }
+
+    public Deck(int numPacks)
+    {
+        allocateMasterPack();
+        this.numPacks = numPacks;
+        init(this.numPacks);
     }
     
     public void init(int numPacks)
     {
-        
+        for (int pack = 0; pack < numPacks; pack++)
+        {
+            for (int card = 0; card < masterPack.length; card++)
+            {
+                    cards[(52 * pack) + card] = masterPack[card];
+            }
+        }
     }
     
     public void shuffle()
@@ -89,6 +105,10 @@ class Deck // Roderick
     
     private static void allocateMasterPack()
     {
-        
+        if (masterPack == null)
+        {
+            masterPack = new Card[52];
+            System.out.println("master pack created");
+        }
     }
 }
