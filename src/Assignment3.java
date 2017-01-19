@@ -91,10 +91,48 @@ class Card
    }
 }
 
-//Roderick
-class Deck
+class Deck //Roderick
 {
+   private static Card[] masterPack;
+   private Card[] cards;
    
+   int topCard;
+   int numPacks;
+   
+   public Deck()
+   {
+      
+   }
+   
+   public void init(int numPacks)
+   {
+      
+   }
+   
+   public void shuffle()
+   {
+      
+   }
+   
+   public Card dealCard()
+   {
+      return new Card();
+   }
+   
+   public int getTopCard()
+   {
+      return topCard;
+   }
+   
+   public Card inspectCar(int k)
+   {
+      return new Card();
+   }
+   
+   private static void allocateMasterPack()
+   {
+      
+   }
 }
 
 //Oswaldo
